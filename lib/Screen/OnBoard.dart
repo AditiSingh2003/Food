@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food/Auth/AuthScren.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class onBoard extends StatefulWidget {
@@ -81,7 +82,12 @@ class _onBoardState extends State<onBoard> {
                 child: Column(
                   children: [
                     isLastPage ? TextButton(onPressed: (){}, child: TextButton(
-                onPressed: () => Navigator.pushNamed(context, '/welcome'),
+                onPressed: () => Navigator.push(
+                context,
+                  MaterialPageRoute(
+                    builder: (context) => AuthScreen(),
+                  ),
+                ),
                 child: Container(
                   alignment: Alignment.center,
                   padding: EdgeInsets.only(top: 8, bottom: 8, left: 20, right: 10),
