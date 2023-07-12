@@ -46,14 +46,27 @@ class _CraftingState extends State<Crafting> {
             SizedBox(
               height: 10,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Card(
-                child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
+            Plate(),
+          ],
+      ),
+    );
+  }
+  
+  Widget Plate() =>
+  Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Card(
+        child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10),
+                topRight: Radius.circular(10)
+              ),
+            ),
                     child: Image.asset('assets/def.png',
                     ),
                   ),
@@ -90,9 +103,5 @@ class _CraftingState extends State<Crafting> {
           ),
           ),
               ],
-            ),
-          ],
-      ),
-    );
-  }
+            );
 }

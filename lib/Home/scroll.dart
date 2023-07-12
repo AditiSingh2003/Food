@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 
-class Scroll extends StatefulWidget {
-  const Scroll({super.key});
-
-  @override
-  State<Scroll> createState() => _ScrollState();
-}
-
-class _ScrollState extends State<Scroll> {
+class Scroll extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
-    return  Expanded(
-      child: PageView(
-          scrollDirection: Axis.horizontal,
-          children: [
-              Image.asset('assets/header.png',),
-              Image.asset('assets/header.png',),
-              Image.asset('assets/header.png',),
-          ],
+    return Container(
+      height: 180,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: 4,
+        itemBuilder: (context, index) {
+          return Container(
+            width: 300,
+            margin: EdgeInsets.symmetric(horizontal: 8),
+            child: Image.asset('assets/header.png'),
+          );
+        },
       ),
     );
   }
