@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:food/Auth/detail.dart';
 import 'package:pinput/pinput.dart';
 
 class OTP extends StatefulWidget {
@@ -97,7 +98,12 @@ class _OTPState extends State<OTP> {
               width: 300,
               height: 50,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Detail(),
+                                ),
+                              ),
                 child: Text(
                   'Submit',
                   style: TextStyle(
