@@ -61,7 +61,7 @@ class _NextState extends State<Next> {
             fontWeight: FontWeight.w400
           ),
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: 50,),
         ],
       ),
     );

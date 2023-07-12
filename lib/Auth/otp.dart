@@ -72,7 +72,7 @@ class _OTPState extends State<OTP> {
                 SizedBox(
                   width: 10,
                 ),
-                Icon( Icons.check_circle, color: Colors.green, ),
+                Icon( Icons.verified_sharp , color: Colors.green, ),
               ],
             ),
             SizedBox(
