@@ -34,6 +34,7 @@ class _mainCourse extends State<mainCourse> {
                 'Main Course',
                 style: TextStyle(
                   fontSize: 20,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
               Text(
@@ -47,7 +48,7 @@ class _mainCourse extends State<mainCourse> {
           ),
           SizedBox(height: 10),
           Container(
-            height: 180,
+            height: 170,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: 3,
@@ -60,6 +61,7 @@ class _mainCourse extends State<mainCourse> {
                   ),
                   child: Card(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Image.asset(
                           imagePaths[index],
@@ -67,11 +69,15 @@ class _mainCourse extends State<mainCourse> {
                           width: 192,
                         ),
                         SizedBox(height: 10),
-                        Text(
-                          titles[index],
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w500,
+                        Container(
+                          padding: EdgeInsets.only(left: 8),
+                          child: Text(
+                            titles[index],
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Color(0xFF3C3C3C),
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                       ],
@@ -81,7 +87,7 @@ class _mainCourse extends State<mainCourse> {
               },
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 10),
         ],
       ),
     );

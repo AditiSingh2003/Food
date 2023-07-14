@@ -16,9 +16,9 @@ class _StarterState extends State<Starter> {
   ];
 
   List<String> titles = [
-    'Grilled Chicken',
+    'Grill Chicken',
     'Mushroom',
-    'Grilled Chicken',
+    'Grill Chicken',
     'Mushroom',
   ];
 
@@ -33,15 +33,17 @@ class _StarterState extends State<Starter> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                'Starter',
+                'Starters',
                 style: TextStyle(
                   fontSize: 20,
+                  fontWeight: FontWeight.w600
                 ),
               ),
               Text(
                 'More Starters',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
                   color: Color(0xFF6318AF),
                 ),
               ),
@@ -49,7 +51,7 @@ class _StarterState extends State<Starter> {
           ),
           SizedBox(height: 10),
           Container(
-            height: 180,
+            height: 170,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: 4,
@@ -62,6 +64,7 @@ class _StarterState extends State<Starter> {
                   ),
                   child: Card(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Image.asset(
                           imagePaths[index],
@@ -69,11 +72,15 @@ class _StarterState extends State<Starter> {
                           width: 192,
                         ),
                         SizedBox(height: 10),
-                        Text(
-                          titles[index],
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w500,
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 4),
+                          child: Text(
+                            titles[index],
+                            style: TextStyle(
+                              color: Color(0xFF3C3C3C),
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                       ],
@@ -83,7 +90,7 @@ class _StarterState extends State<Starter> {
               },
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 10),
         ],
       ),
     );

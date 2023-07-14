@@ -9,9 +9,18 @@ class Service extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SizedBox(height: 2,),
+        Text('Services',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        SizedBox(height: 8,),
         Container(
-          height: 250,
+          height: 330,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: imagePaths.length,
@@ -20,36 +29,32 @@ class Service extends StatelessWidget {
                 width: 300,
                 margin: EdgeInsets.symmetric(horizontal: 8),
                 child: Card(
-                  child: Column(
+                  child: Stack(
                     children: [
                       Image.asset(
                         imagePaths[index],
                         alignment: Alignment.center,
-                        height: 140,
+                        height: 150,
                         width: 300,
                       ),
-                      Stack(
-                        children:[ 
-                          Positioned(
-                          right: 0,
-                          child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                            decoration: BoxDecoration(
-                              color: Color(0xFF6318AF),
-                              borderRadius: BorderRadius.circular(4),
-                            ),
-                            child: Text(
-                              'Recommended',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
+                      Positioned(
+                      right: 0,
+                      child: Container(
+                        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: Color(0xFF6318AF),
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        child: Text(
+                          'Recommended',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                        ],
                       ),
+                        ),
                       Positioned(
                         bottom: 0,
                         child: Container(
@@ -58,12 +63,67 @@ class Service extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(4),
                           ),
-                          child: Text(
-                            'Ice Cream',
-                            style: TextStyle(
-                              color: Color(0xFF6318AF),
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+                            child: Column(
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(children: [
+                                      Image.asset('assets/Signature.png',),
+                                      SizedBox(width: 3,),
+                                      Text('Signature', style: TextStyle(color: Color(0xFF6318AF), fontSize: 18, fontWeight: FontWeight.w500),),
+                                    ],),
+                                    SizedBox(height: 8,),
+                                    Row(
+                                      children: [
+                                        Icon(Icons.star_purple500 , color: Color(0xFF6318AF), size: 16,),
+                                        SizedBox(width: 5,),
+                                        Text('High Quality Disposable Cutlery', style: TextStyle( fontSize: 16, fontWeight: FontWeight.w400),),
+                                      ],
+                                    ),
+                                    SizedBox(height: 8,),
+                                    Row(
+                                      children: [
+                                        Icon(Icons.star_purple500 , color: Color(0xFF6318AF), size: 16,),
+                                        SizedBox(width: 5,),
+                                        Text('Elegant Decorations & Table Settings', style: TextStyle( fontSize: 16, fontWeight: FontWeight.w400),),
+                                      ],
+                                    ),
+                                    SizedBox(height: 8,),
+                                    Row(
+                                      children: [
+                                        Icon(Icons.star_purple500 , color: Color(0xFF6318AF), size: 16,),
+                                        SizedBox(width: 5,),
+                                        Text('Served by Waitstaff', style: TextStyle( fontSize: 16, fontWeight: FontWeight.w400),),
+                                      ],
+                                    ),
+                                    SizedBox(height: 8,),
+                                    Row(
+                                      children: [
+                                        Icon(Icons.star_purple500 , color: Color(0xFF6318AF), size: 16,),
+                                        SizedBox(width: 5,),
+                                        Text('Best for Weddings, Corporate Events etc', style: TextStyle( fontSize: 16, fontWeight: FontWeight.w400),),
+                                      ],
+                                    ),
+                                    SizedBox(height: 8,),
+                                  ],
+                                ),
+                                Column(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: [
+                                        SizedBox(height: 8,),
+                                        Text('Know More',
+                                        style: TextStyle(
+                                          color: Color(0xFF6318AF),
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        )
+                                      ],
+                                    )
+                              ],
                             ),
                           ),
                         ),

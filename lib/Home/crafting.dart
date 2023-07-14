@@ -8,82 +8,103 @@ class Crafting extends StatefulWidget {
 }
 
 class _CraftingState extends State<Crafting> {
-  List<String> imagePaths = [
-    'assets/grilled.png',
-    'assets/mush.png',
-    'assets/grilled.png',
-    'assets/mush.png',
-  ];
-
-  List<String> titles = [
-    'Grilled Chicken',
-    'Mushroom',
-    'Grilled Chicken',
-    'Mushroom',
-  ];
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Container(
+          margin: EdgeInsets.all(8.0),
+          padding: EdgeInsets.symmetric(horizontal: 8.0),
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.grey.shade400, ),
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          child: Row(
             children: [
-              Text(
-                'Starter',
-                style: TextStyle(
-                  fontSize: 20,
+              Expanded(
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Search For food and events',
+                    border: InputBorder.none,
+                  ),
                 ),
               ),
-              Text(
-                'More Starters',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Color(0xFF6318AF),
-                ),
+              IconButton(
+                icon: Icon(Icons.search),
+                onPressed: () {
+                  // Perform search action
+                },
               ),
             ],
           ),
-          SizedBox(height: 10),
-          Container(
-            height: 180,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: 4,
-              itemBuilder: (context, index) {
-                return Container(
-                  width: 192,
-                  margin: EdgeInsets.symmetric(horizontal: 8),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Card(
-                    child: Column(
-                      children: [
-                        Image.asset(
-                          imagePaths[index],
-                          fit: BoxFit.fitWidth,
-                          width: 192,
-                        ),
-                        SizedBox(height: 10),
-                        Text(
-                          titles[index],
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-              },
-            ),
+        ),
+
+          SizedBox(height: 20,),
+          Text('Start crafting',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w400,
+            color: Color(0xFF6318AF),
           ),
-          SizedBox(height: 20),
+          ),
+          SizedBox(height: 20,),
+          Row(
+  children: [
+    Flexible(
+      flex: 1,
+      child: Card(
+        child: Column(
+          children: [
+            Image.asset(
+              'assets/def.png',
+              fit: BoxFit.cover,
+              height: 100,
+              width: double.infinity,
+            ),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text('Default Platers',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+              ),),
+            ),
+          ],
+        ),
+      ),
+    ),
+    SizedBox(width: 16), // Adding some spacing between the cards
+    Flexible(
+      flex: 1,
+      child: Card(
+        child: Column(
+          children: [
+            Image.asset(
+              'assets/def.png',
+              fit: BoxFit.cover,
+              height: 100,
+              width: double.infinity,
+            ),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text('Craft Your Own',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+              ),
+              ),
+              ),
+          ],
+        ),
+      ),
+    ),
+  ],
+),
+SizedBox(height: 20,),
+
         ],
       ),
     );

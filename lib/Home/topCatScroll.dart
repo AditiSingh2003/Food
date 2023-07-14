@@ -13,6 +13,7 @@ class _TopCatScrollState extends State<TopCatScroll> {
     Image.asset('assets/drink.png'),
     Image.asset('assets/rice.png'),
     Image.asset('assets/curry.png'),
+    
   ];
   List<String> title =[
     'Starter',
@@ -37,7 +38,7 @@ class _TopCatScrollState extends State<TopCatScroll> {
               Text(
                 title[index],
                 style: TextStyle(
-                  color: Color(0xFF6318AF),
+                  color:Colors.black87,
                   fontSize: 12,
                   fontWeight: FontWeight.w400
                 ),

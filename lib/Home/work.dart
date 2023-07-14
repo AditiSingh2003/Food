@@ -16,8 +16,8 @@ class _NextState extends State<Next> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: 20,),
-          Text('How Does It Work?',
-          style: TextStyle(fontSize: 26, fontWeight: FontWeight.w400),),
+          Text('How does it work?',
+          style: TextStyle(fontSize: 26, fontWeight: FontWeight.w500),),
           SizedBox(height: 25,),
           Right(
             img: 'assets/menu.png',
@@ -81,7 +81,9 @@ class _NextState extends State<Next> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(heading,
-                style: TextStyle(fontSize: 24, color: Color(0xFF6318AF)),),
+                style: TextStyle(fontSize: 24,
+                fontWeight: FontWeight.w500,
+                color: Color(0xFF6318AF)),),
                 Text(text,
                 )
               ],
@@ -102,7 +104,9 @@ class _NextState extends State<Next> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(heading,
-                style: TextStyle(fontSize: 24, color: Color(0xFF6318AF)),),
+                style: TextStyle(fontSize: 24,
+                fontWeight: FontWeight.w500,
+                color: Color(0xFF6318AF)),),
                 Text(text,
                 )
               ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food/Home/crafting.dart';
+import 'package:food/Home/defaultMenu.dart';
 import 'package:food/Home/header.dart';
 import 'package:food/Home/mainCourse.dart';
 import 'package:food/Home/scroll.dart';
@@ -28,20 +29,23 @@ class _HomeScreenState extends State<HomeScreen> {
               Home(),
               Scroll(),
               Crafting(),
+              DefaultMenu(),
               TopCat(),
               Starter(),
               mainCourse(),
-              // Service(),
+              Service(),
               Next(),
 
             ],
           ),
         ),
       ),
-      floatingActionButton: RemoveSplashFab(onPressed: (){}, 
-      child: Image(image: AssetImage('assets/Logo.png'),),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
+      
+      // floatingActionButton: RemoveSplashFab(onPressed: (){}, 
+      // child: Image(image: AssetImage('assets/Logo.png'),),
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
