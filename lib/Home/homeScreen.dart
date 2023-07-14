@@ -41,11 +41,11 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
 
-      
-      // floatingActionButton: RemoveSplashFab(onPressed: (){}, 
-      // child: Image(image: AssetImage('assets/Logo.png'),),
-      // ),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: RemoveSplashFab(onPressed: (){}, 
+
+      child: Image(image: AssetImage('assets/Logo.png'),),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
