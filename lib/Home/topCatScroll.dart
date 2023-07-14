@@ -23,6 +23,8 @@ class _TopCatScrollState extends State<TopCatScroll> {
   ];
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Container(
       height: 110,
       child: ListView.builder(
@@ -30,7 +32,7 @@ class _TopCatScrollState extends State<TopCatScroll> {
         itemCount: 4,
         itemBuilder: (context, index) {
           return Container(
-            width: 80,
+            width: screenWidth * 0.2,
             margin: EdgeInsets.symmetric(horizontal: 8),
             child: Column(children: [
               img[index],

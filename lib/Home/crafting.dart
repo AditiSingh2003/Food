@@ -11,6 +11,8 @@ class _CraftingState extends State<Crafting> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
      return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,7 +78,7 @@ class _CraftingState extends State<Crafting> {
         ),
       ),
     ),
-    SizedBox(width: 16), // Adding some spacing between the cards
+    SizedBox(width: screenWidth * .01), // Adding some spacing between the cards
     Flexible(
       flex: 1,
       child: Card(

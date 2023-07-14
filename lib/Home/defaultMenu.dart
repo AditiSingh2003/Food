@@ -10,6 +10,8 @@ class DefaultMenu extends StatefulWidget {
 class _DefaultMenuState extends State<DefaultMenu> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Container(
       child: Column(
         children: [
@@ -34,7 +36,6 @@ class _DefaultMenuState extends State<DefaultMenu> {
                     Image.asset('assets/default.png'),
                   ],
                 ),
-                SizedBox(width: 0),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,7 +83,7 @@ class _DefaultMenuState extends State<DefaultMenu> {
         ),
       ),
     ),
-    SizedBox(width: 5), // Adding some spacing between the cards
+    SizedBox(width: screenWidth*.01), // Adding some spacing between the cards
     Flexible(
       flex: 1,
       child: Card(

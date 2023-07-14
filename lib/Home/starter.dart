@@ -24,6 +24,8 @@ class _StarterState extends State<Starter> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,13 +53,13 @@ class _StarterState extends State<Starter> {
           ),
           SizedBox(height: 10),
           Container(
-            height: 170,
+            height: screenHeight * 0.2,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: 4,
               itemBuilder: (context, index) {
                 return Container(
-                  width: 192,
+                  width: screenWidth * 0.5,
                   margin: EdgeInsets.symmetric(horizontal: 8),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
@@ -69,7 +71,7 @@ class _StarterState extends State<Starter> {
                         Image.asset(
                           imagePaths[index],
                           fit: BoxFit.fitWidth,
-                          width: 192,
+                          width: screenWidth * 0.5,
                         ),
                         SizedBox(height: 10),
                         Container(

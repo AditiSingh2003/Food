@@ -8,6 +8,8 @@ class Service extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -20,13 +22,13 @@ class Service extends StatelessWidget {
         ),
         SizedBox(height: 8,),
         Container(
-          height: 330,
+          height: screenHeight * 0.42,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: imagePaths.length,
             itemBuilder: (context, index) {
               return Container(
-                width: 300,
+                width: screenWidth * 0.8,
                 margin: EdgeInsets.symmetric(horizontal: 8),
                 child: Card(
                   child: Stack(
@@ -34,8 +36,8 @@ class Service extends StatelessWidget {
                       Image.asset(
                         imagePaths[index],
                         alignment: Alignment.center,
-                        height: 150,
-                        width: 300,
+                        height: screenHeight * 0.21,
+                        width: screenWidth * 0.8,
                       ),
                       Positioned(
                       right: 0,
