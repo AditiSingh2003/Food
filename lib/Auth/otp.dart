@@ -1,6 +1,8 @@
 import 'dart:ui';
-
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:quickalert/quickalert.dart';
 import 'package:flutter/material.dart';
+import 'package:food/Auth/AuthScren.dart';
 import 'package:food/Auth/detail.dart';
 import 'package:pinput/pinput.dart';
 
@@ -12,6 +14,18 @@ class OTP extends StatefulWidget {
 }
 
 class _OTPState extends State<OTP> {
+
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  var code = '';
+  
+  void showError(){
+    QuickAlert.show(context: context,
+    title: 'Error',
+    text: 'OTP Don\'t Match',
+    type: QuickAlertType.warning,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,7 +93,12 @@ class _OTPState extends State<OTP> {
               height: 50,
             ),
             Pinput(
-              length: 4,
+              onChanged: (value){
+                setState(() {
+                  code = value;
+                });
+              },
+              length: 6,
               showCursor: true,
               defaultPinTheme: PinTheme(
                 width: 60,
@@ -98,12 +117,22 @@ class _OTPState extends State<OTP> {
               width: 300,
               height: 50,
               child: ElevatedButton(
-                onPressed: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Detail(),
-                                ),
-                              ),
+                onPressed: ()async{
+                  try{
+                    PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: AuthScreen.verify, smsCode: code);
+                  // Sign the user in (or link) with the credential
+                  await auth.signInWithCredential(credential);
+                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Detail(),
+                                      ),
+                                    );
+                  }
+                  catch(e){
+                    showError();
+                  }
+                },
                 child: Text(
                   'Submit',
                   style: TextStyle(

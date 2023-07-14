@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import 'otp.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
+
+  static String verify = "";
 
   @override
   State<AuthScreen> createState() => _AuthScreenState();
@@ -11,8 +14,16 @@ class AuthScreen extends StatefulWidget {
 
 class _AuthScreenState extends State<AuthScreen> {
   final TextEditingController _phoneNumberController = TextEditingController();
+  final TextEditingController country_code = TextEditingController();
+  var phone ='';
 
   @override
+  void initState (){
+    
+    country_code.text = '+91';
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -69,7 +80,11 @@ class _AuthScreenState extends State<AuthScreen> {
                     SizedBox(
                       height: 20,
                     ),
-                    TextFormField(
+                    TextField(
+                      onChanged: (value){
+                        phone = value;
+                      },
+                      keyboardType: TextInputType.phone,
                       controller: _phoneNumberController,
                       decoration: InputDecoration(
                         hintText: 'Enter Phone Number',
@@ -97,12 +112,23 @@ class _AuthScreenState extends State<AuthScreen> {
                         color: Color(0xFF6318AF),
                       ),
                       child: TextButton(
-                          onPressed: () => Navigator.push(
+                        onPressed: () async {
+                          await FirebaseAuth.instance.verifyPhoneNumber(
+                            phoneNumber: '${country_code.text+ (phone)}',
+                            verificationCompleted: (PhoneAuthCredential credential) {},
+                            verificationFailed: (FirebaseAuthException e) {},
+                            codeSent: (String verificationId, int? resendToken) {
+                              AuthScreen.verify = verificationId;
+                              Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => OTP(),
                                 ),
-                              ),
+                              );
+                            },
+                            codeAutoRetrievalTimeout: (String verificationId) {},
+                          );
+                        },
                           child: Text(
                             'Continue',
                             style: TextStyle(

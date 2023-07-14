@@ -11,6 +11,7 @@ class _NextState extends State<Next> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -72,7 +73,7 @@ class _NextState extends State<Next> {
     child:Row(
       children: [
         Image(image: AssetImage(img),),
-        SizedBox(width: 10,),
+        SizedBox(width: 20,),
         Expanded(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -108,7 +109,7 @@ class _NextState extends State<Next> {
             ),
           ),
         ),
-        SizedBox(width: 10,),
+        SizedBox(width: 20,),
         Image(image: AssetImage(img),),
     ],)
   );

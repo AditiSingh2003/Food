@@ -1,107 +1,91 @@
 import 'package:flutter/material.dart';
 
 class Crafting extends StatefulWidget {
-  const Crafting({super.key});
+  const Crafting({Key? key}) : super(key: key);
 
   @override
   State<Crafting> createState() => _CraftingState();
 }
 
 class _CraftingState extends State<Crafting> {
+  List<String> imagePaths = [
+    'assets/grilled.png',
+    'assets/mush.png',
+    'assets/grilled.png',
+    'assets/mush.png',
+  ];
+
+  List<String> titles = [
+    'Grilled Chicken',
+    'Mushroom',
+    'Grilled Chicken',
+    'Mushroom',
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return  Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            TextFormField(
-            decoration: InputDecoration(
-              labelText: 'Search food or events',
-              labelStyle: TextStyle(
-                color: Colors.grey,
-                fontSize: 20,
-                fontFamily: 'Lexend',
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Starter',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
               ),
-              suffixIcon: Icon(
-                Icons.search,
-                color: Color(0xFF6318AF),
+              Text(
+                'More Starters',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Color(0xFF6318AF),
+                ),
               ),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
+            ],
+          ),
+          SizedBox(height: 10),
+          Container(
+            height: 180,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: 4,
+              itemBuilder: (context, index) {
+                return Container(
+                  width: 192,
+                  margin: EdgeInsets.symmetric(horizontal: 8),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Card(
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          imagePaths[index],
+                          fit: BoxFit.fitWidth,
+                          width: 192,
+                        ),
+                        SizedBox(height: 10),
+                        Text(
+                          titles[index],
+                          style: TextStyle(
+                            fontSize: 24,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
             ),
           ),
-          SizedBox(
-            height: 10,
-          ),
-            Text(
-              'Start Crafting',
-              textAlign: TextAlign.start,
-              style: TextStyle(
-                color: Color(0xFF6318AF),
-                fontSize: 20,
-                fontWeight: FontWeight.w400
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Plate(),
-          ],
+          SizedBox(height: 20),
+        ],
       ),
     );
   }
-  
-  Widget Plate() =>
-  Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [
-      Card(
-        child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(10),
-                topRight: Radius.circular(10)
-              ),
-            ),
-                    child: Image.asset('assets/def.png',
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'Default Plater',
-                      style: TextStyle(
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
-                ],
-          ),
-          ),
-           Card(
-                child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    child: Image.asset('assets/def.png',
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'Default Plater',
-                      style: TextStyle(
-                        fontSize: 16,
-                      ),
-                    ),
-                  ),
-                ],
-          ),
-          ),
-              ],
-            );
 }

@@ -15,7 +15,7 @@ class _HomeState extends State<Home> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            height: 40,
+            height: 50,
           ),
           Text(
             'Hi, Monica',
@@ -36,7 +36,7 @@ class _HomeState extends State<Home> {
                   Text(
                     'Current Location',
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: 14,
                       color: Colors.grey.shade600,
                     ),
                   ),
@@ -46,7 +46,7 @@ class _HomeState extends State<Home> {
                         Icons.location_on_outlined,
                         color: Color(0xFF6318AF),
                       ),
-                      Text('Kathmandu, Nepal'),
+                      Text('Hyderabad'),
                     ],
                   ),
                 ],

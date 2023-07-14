@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:food/Screen/Welcome.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() => (
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
       home: App(),
     )
-  )
-);
+  );
+}
 
 class App extends StatefulWidget {
   const App({super.key});

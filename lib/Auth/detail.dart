@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food/Home/homeScreen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Detail extends StatefulWidget {
   const Detail({super.key});
@@ -9,6 +10,10 @@ class Detail extends StatefulWidget {
 }
 
 class _DetailState extends State<Detail> {
+
+  final name = TextEditingController();
+  final email = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,6 +57,7 @@ class _DetailState extends State<Detail> {
                     height: 20,
                   ),
                   TextFormField(
+                    controller: name,
                     decoration: InputDecoration(
                       labelText: 'Full Name',
                       labelStyle: TextStyle(
@@ -68,6 +74,7 @@ class _DetailState extends State<Detail> {
                     height: 20,
                   ),
                   TextFormField(
+                    controller: email,
                     decoration: InputDecoration(
                       labelText: 'Email ID*',
                       labelStyle: TextStyle(
@@ -91,12 +98,17 @@ class _DetailState extends State<Detail> {
       bottomSheet: Padding(
         padding: const EdgeInsets.all(10.0),
         child: TextButton(
-          onPressed: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => HomeScreen(),
-                                ),
-                              ),
+          onPressed: () {
+            CollectionReference users = FirebaseFirestore.instance.collection('users');
+            users.add({
+              'name': name.text,
+              'email': email.text,
+            });
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomeScreen()),
+            );
+          },
           child: Text('Let\'s start', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),),
           style: TextButton.styleFrom(
             backgroundColor: Color(0xFF6318AF),
