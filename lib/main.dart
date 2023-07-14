@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food/Screen/Welcome.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:sizer/sizer.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
