@@ -54,57 +54,57 @@ class _CraftingState extends State<Crafting> {
           ),
           SizedBox(height: 20,),
           Row(
-  children: [
-    Flexible(
-      flex: 1,
-      child: Card(
-        child: Column(
           children: [
-            Image.asset(
-              'assets/def.png',
-              fit: BoxFit.cover,
-              height: 100,
-              width: double.infinity,
+            Flexible(
+              flex: 1,
+              child: Card(
+                child: Column(
+                  children: [
+                    Image.asset(
+                      'assets/def.png',
+                      fit: BoxFit.cover,
+                      height: 100,
+                      width: double.infinity,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text('Default Platers',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),),
+                    ),
+                  ],
+                ),
+              ),
             ),
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text('Default Platers',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-              ),),
+            SizedBox(width: screenWidth * .01), // Adding some spacing between the cards
+            Flexible(
+              flex: 1,
+              child: Card(
+                child: Column(
+                  children: [
+                    Image.asset(
+                      'assets/def.png',
+                      fit: BoxFit.cover,
+                      height: 100,
+                      width: double.infinity,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Text('Craft Your Own',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      ),
+                      ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
-      ),
-    ),
-    SizedBox(width: screenWidth * .01), // Adding some spacing between the cards
-    Flexible(
-      flex: 1,
-      child: Card(
-        child: Column(
-          children: [
-            Image.asset(
-              'assets/def.png',
-              fit: BoxFit.cover,
-              height: 100,
-              width: double.infinity,
-            ),
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text('Craft Your Own',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-              ),
-              ),
-              ),
-          ],
-        ),
-      ),
-    ),
-  ],
-),
 SizedBox(height: 20,),
 
         ],
