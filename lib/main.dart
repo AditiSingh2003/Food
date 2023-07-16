@@ -47,7 +47,6 @@ with SingleTickerProviderStateMixin{
         fit: BoxFit.cover
       ),
       ),
-      
     );
   }
 }
