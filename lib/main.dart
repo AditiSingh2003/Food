@@ -23,8 +23,7 @@ class Welcome extends StatefulWidget {
   State<Welcome> createState() => _WelcomeState();
 }
 
-class _WelcomeState extends State<Welcome> 
-with SingleTickerProviderStateMixin{
+class _WelcomeState extends State<Welcome> {
 
 
   @override
