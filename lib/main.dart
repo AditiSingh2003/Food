@@ -30,11 +30,7 @@ class _WelcomeState extends State<Welcome> {
 
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage('assets/Splash_screen_4.png'),
-        fit: BoxFit.cover
-      ),
-      ),
+      color: Colors.red,
     );
   }
 }
