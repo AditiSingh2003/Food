@@ -28,28 +28,11 @@ with SingleTickerProviderStateMixin{
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage('assets/Splash_screen_4.jpg'),
+        image: DecorationImage(image: AssetImage('assets/Splash_screen_4.png'),
         fit: BoxFit.cover
       ),
       ),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(height: 150,),
-            Text(
-              'Welcome',
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Capriola',
-                color: Color(0xFFF7E5B7),
-              ),
-            ),
-            SizedBox(height: 20,),
-          ],
-        ),
-      ),
+      
     );
   }
 }
