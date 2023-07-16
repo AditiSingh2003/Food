@@ -28,17 +28,6 @@ with SingleTickerProviderStateMixin{
 
 
   @override
-  void initState() {
-    super.initState();
-    Future.delayed(Duration(seconds: 3),(){
-       Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => Splash(),
-              ),
-            );
-    });
-  }
 
   Widget build(BuildContext context) {
     return Container(
